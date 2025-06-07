@@ -1,60 +1,18 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-
-// function App() {
-//   const [count, setCount] = useState(0)
-
-//   return (
-//     <>
-//       <div>
-//         <a href="https://vite.dev" target="_blank">
-//           <img src={viteLogo} className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://react.dev" target="_blank">
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.tsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-//     </>
-//   )
-// }
-
-// export default App
-
-import React from 'react';
-import { AiOutlineCamera, AiOutlineGithub, AiOutlineInstagram, AiOutlineTwitter, AiOutlineVerticalAlignBottom, AiOutlineYoutube } from "react-icons/ai";
-import { FaYoutube } from "react-icons/fa";
-
-const Home = () => {
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import HomePages from "./Pages/Homepage/HomePages";
+import Login from "./Pages/Loginpage/Login";
+import Temu from "./Pages/Temu/Temu";
+const App = () => {
   return (
     <div>
-      <h1>
-        I Love my country Nigeria
-      </h1>
-        <h2>
-          <AiOutlineTwitter style={{color: 'darkblue', fontSize:200}}/>
-      <AiOutlineGithub style={{color: 'darkgoldenrod',fontSize:200}}/>
-      <AiOutlineInstagram style={{color:'darkorange', fontSize:200}}/>
-      <AiOutlineVerticalAlignBottom  style={{color:'darkgray', fontSize:200}}/>
-      <AiOutlineCamera style={{color:'blue', fontSize:200}}/>
-      <FaYoutube style={{color:'red', fontSize:200}}/>
-        </h2>
+      <Routes>
+        <Route path="/" element={<HomePages />} />
+         <Route path="/login" element={<Login />} />
+         <Route path="/Temu" element={<Temu />} />
+      </Routes>
     </div>
-    
-  )
-}
+  );
+};
 
-export default Home
+export default App;
